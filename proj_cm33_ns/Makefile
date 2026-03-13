@@ -65,11 +65,17 @@ CORE_NAME=CM33_0
 # tree for source code and builds it. The SOURCES variable can be used to
 # manually add source code to the build process from a location not searched
 # by default, or otherwise not found by the build system.
-SOURCES+=
+SOURCES+= \
+	../bfx/src/BfxApp.cpp\
+	../bfx/src/BfxChild.cpp\
+	../bfx/src/BfxLogger.cpp\
+	../bfx/src/BfxUsbHidDev.cpp\
+	../bfx/src/BfxUSBHost.cpp
 
 # Like SOURCES, but for include directories. Value should be paths to
 # directories (without a leading -I).
-INCLUDES+=
+INCLUDES+= \
+	../bfx/include
 
 # Add additional defines to the build process (without a leading -D).
 DEFINES+=CY_RETARGET_IO_CONVERT_LF_TO_CRLF

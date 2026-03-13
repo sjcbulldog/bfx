@@ -55,4 +55,9 @@ CONFIG=Debug
 # NOTE: Check the JSON file for the command parameters
 COMBINE_SIGN_JSON?=configs/boot_with_extended_boot.json
 
+
+CONFIG_DISPLAY = W4P3INCH_DISP
+COMPONENTS+=GFXSS
+
+
 include ../common_app.mk
