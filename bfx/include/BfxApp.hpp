@@ -17,7 +17,7 @@ public:
     static const uint32_t CREATE_FLAG_RETARGET = (1U << 0) ;
 
 public:
-    Application(uint32_t flags) ;
+    Application(uint32_t flags = 0) ;
 
     // Initialize the application
     cy_rslt_t hwinit() ;
@@ -54,6 +54,9 @@ private:
     void afterStartRTOS() ;
 
 private:
+    // The heap for the shared memory space
+    void *shared_heap ;
+
     // The flags used during application creation
     uint32_t create_flags ;
 

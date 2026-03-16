@@ -1,5 +1,6 @@
 #pragma once
 
+#include "BfxApp.hpp"
 #include <BfxChild.hpp>
 #include <BfxErrors.hpp>
 #include <BfxConfig.hpp>
@@ -11,13 +12,14 @@
 namespace Bfx {
 
 class UsbHidDev ;
+class Application ;
 
 class UsbHost : public Child {
 
     friend void usb_device_notify(void* usb_context, uint8_t usb_index, USBH_DEVICE_EVENT usb_event) ;
 
 public:
-    UsbHost()  ;
+    UsbHost() ;
 
     static UsbHost *getInstance() {
         return theOne ;

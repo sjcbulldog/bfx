@@ -35,7 +35,8 @@ namespace Bfx {
 
 UsbHost* UsbHost::theOne = nullptr ;
 
-UsbHost::UsbHost() {
+UsbHost::UsbHost()
+{
     if (theOne == nullptr) {
         theOne = this ;
     }

@@ -6,7 +6,7 @@
 
 class MyApp : public Bfx::Application {
 public:
-    MyApp(uint32_t flags) ;
+    MyApp() ;
 
     void appThread() override ;
 

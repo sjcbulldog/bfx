@@ -3654,32 +3654,20 @@
                         <Param id="size" value="0x002BC000"/>
                     </Parameters>
                 </Personality>
-                <Personality template="memory_region_data" version="1.0" instance="0zJXEr6pka4">
-                    <Block location="vres[0].memory_region_data[9]" locked="true"/>
-                    <Parameters>
-                        <Param id="description" value="Shared region between CM33 and CM55"/>
-                        <Param id="domain" value="Rj_rAX1eb8U"/>
-                        <Param id="memoryId" value="SOCMEM_RAM"/>
-                        <Param id="offset" value="0x002FC000"/>
-                        <Param id="regionId" value="m33_m55_shared"/>
-                        <Param id="reservedGuid" value="USER_DEFINED"/>
-                        <Param id="size" value="0x00040000"/>
-                    </Parameters>
-                </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="aC-gUJLSBI4">
-                    <Block location="vres[0].memory_region_data[10]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[9]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="Graphics data"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>
                         <Param id="memoryId" value="SOCMEM_RAM"/>
-                        <Param id="offset" value="0x0033C000"/>
+                        <Param id="offset" value="0x002FC000"/>
                         <Param id="regionId" value="gfx_mem"/>
                         <Param id="reservedGuid" value="USER_DEFINED"/>
                         <Param id="size" value="0x001C4000"/>
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="_Hf5ER1SoPM">
-                    <Block location="vres[0].memory_region_data[11]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[10]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="Shared region between CM33 secure project and secure enclave"/>
                         <Param id="domain" value="7cPl230VJyc"/>
@@ -3691,7 +3679,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="I4EcDdFsBYc">
-                    <Block location="vres[0].memory_region_data[12]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[11]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 secure code region"/>
                         <Param id="domain" value="7cPl230VJyc"/>
@@ -3703,7 +3691,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="ddkQGS-VO4I">
-                    <Block location="vres[0].memory_region_data[13]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[12]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 secure data region"/>
                         <Param id="domain" value="7cPl230VJyc"/>
@@ -3715,7 +3703,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="0-n6OQnErF0">
-                    <Block location="vres[0].memory_region_data[14]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[13]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 code region"/>
                         <Param id="domain" value="Xo07Phg6oz8"/>
@@ -3727,7 +3715,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="rF4o_hNHwc0">
-                    <Block location="vres[0].memory_region_data[15]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[14]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 data region"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>
@@ -3739,7 +3727,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="DhUV7mLaCmM">
-                    <Block location="vres[0].memory_region_data[16]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[15]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 secure shared region"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>
@@ -3751,31 +3739,31 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="mBBWdCYdOhU">
-                    <Block location="vres[0].memory_region_data[17]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[16]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 shared region"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>
-                        <Param id="memoryId" value="SRAM"/>
-                        <Param id="offset" value="0x000FE000"/>
+                        <Param id="memoryId" value="SOCMEM_RAM"/>
+                        <Param id="offset" value="0x004C0000"/>
                         <Param id="regionId" value="m33_allocatable_shared"/>
                         <Param id="reservedGuid" value="USER_DEFINED"/>
-                        <Param id="size" value="0x00001000"/>
+                        <Param id="size" value="0x00040000"/>
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="SSEo_lVrya4">
-                    <Block location="vres[0].memory_region_data[18]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[17]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM55 shared region"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>
                         <Param id="memoryId" value="SRAM"/>
-                        <Param id="offset" value="0x000FF000"/>
+                        <Param id="offset" value="0x000FE000"/>
                         <Param id="regionId" value="m55_allocatable_shared"/>
                         <Param id="reservedGuid" value="USER_DEFINED"/>
                         <Param id="size" value="0x00001000"/>
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="zbDxvcj0isQ">
-                    <Block location="vres[0].memory_region_data[19]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[18]" locked="true"/>
                     <Parameters>
                         <Param id="description" value=""/>
                         <Param id="domain" value="kTqxq_31FkI"/>
@@ -3787,7 +3775,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="OY8D1E91BRo">
-                    <Block location="vres[0].memory_region_data[20]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[19]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 secure trailer"/>
                         <Param id="domain" value="7cPl230VJyc"/>
@@ -3799,7 +3787,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="BwSwoRJ5h_8">
-                    <Block location="vres[0].memory_region_data[21]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[20]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 trailer"/>
                         <Param id="domain" value="Xo07Phg6oz8"/>
@@ -3811,7 +3799,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="XRA65THTBM4">
-                    <Block location="vres[0].memory_region_data[22]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[21]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM55 trailer"/>
                         <Param id="domain" value="P8kQl2DRYUQ"/>
@@ -3823,7 +3811,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="CbT4WH07QQw">
-                    <Block location="vres[0].memory_region_data[23]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[22]" locked="true"/>
                     <Parameters>
                         <Param id="description" value=""/>
                         <Param id="domain" value="kTqxq_31FkI"/>
@@ -3835,7 +3823,7 @@
                     </Parameters>
                 </Personality>
                 <Personality template="memory_region_data" version="1.0" instance="iTh4k99T-Pg">
-                    <Block location="vres[0].memory_region_data[24]" locked="true"/>
+                    <Block location="vres[0].memory_region_data[23]" locked="true"/>
                     <Parameters>
                         <Param id="description" value="CM33 non-secure and CM55 user programmable region"/>
                         <Param id="domain" value="Rj_rAX1eb8U"/>

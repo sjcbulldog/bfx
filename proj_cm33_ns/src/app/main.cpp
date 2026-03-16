@@ -47,7 +47,7 @@ static void handle_app_error(void)
     while(true);
 }
 
-MyApp app(Bfx::Application::CREATE_FLAG_RETARGET) ;
+MyApp app ;
 int main(void)
 {
     if (CY_RSLT_SUCCESS != app.hwinit()) {
