@@ -26,7 +26,7 @@ public:
     }
 
     cy_rslt_t addDevice(UsbHidDev *dev) {
-        for (int i = 0; i < BFX_MAX_USB_HID_DEVICES; i++) {
+        for (unsigned int i = 0; i < BFX_MAX_USB_HID_DEVICES; i++) {
             if (this->hid_devs[i] == nullptr) {
                 this->hid_devs[i] = dev ;
                 return CY_RSLT_SUCCESS ;

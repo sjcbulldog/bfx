@@ -6,6 +6,7 @@
 #include <Task.h>
 #include <BfxConfig.hpp>
 #include <BfxLogger.hpp>
+#include <BfxAllocator.hpp>
 
 namespace Bfx {
 
@@ -33,6 +34,10 @@ public:
         return this->logger ;
     }
 
+    Allocator *getSharedAllocator() {
+        return this->shared_allocator_ ;
+    }
+
 protected:
     virtual void appThread() = 0 ;
 
@@ -54,9 +59,6 @@ private:
     void afterStartRTOS() ;
 
 private:
-    // The heap for the shared memory space
-    void *shared_heap ;
-
     // The flags used during application creation
     uint32_t create_flags ;
 
@@ -77,6 +79,9 @@ private:
 
     // List of registered child objects
     Child* children[BFX_MAX_CHILD_OBJECTS];
+
+    // Allocator for shared memory
+    Allocator* shared_allocator_ ;
 
 } ;
 

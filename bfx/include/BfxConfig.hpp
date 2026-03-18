@@ -1,5 +1,8 @@
 #pragma once
 
+// Components to be added to the main application in the framework
+#define BFX_APP_COMPONENT_USB_HOST             (1)
+
 // The maximum number of child objects that can be registered with the application
 #define BFX_MAX_CHILD_OBJECTS               (10U)
 

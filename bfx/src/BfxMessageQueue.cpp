@@ -1,12 +1,12 @@
 #include <cy_result.h>
-#include "heap.h"
 #include <BfxMessageQueue.hpp>
 #include <BfxErrors.hpp>
+#include <BfxAllocator.hpp> 
 
 namespace Bfx {
-MessageQueue::MessageQueue(void *inst, size_t count, size_t item_size)
+MessageQueue::MessageQueue(Allocator *allocator, size_t count, size_t item_size)
 {
-    this->heapinst_ = inst ;
+    this->heapinst_ = allocator ;
     this->count_ = count ;
     this->item_size_ = item_size ;
 } 
@@ -23,16 +23,16 @@ cy_rslt_t MessageQueue::initFirst(uint32_t semno)
 
     // Allocated shared memory for the IPC object and the queue pool from the provided heap instance. 
     // The shared memory is used by both sides of the IPC communication, so it must be allocated from a shared heap.
-    shared = (mtb_ipc_shared_t *)heapAllocate(this->heapinst_, sizeof(mtb_ipc_shared_t)) ;
+    shared = (mtb_ipc_shared_t *)this->heapinst_->alloc(sizeof(mtb_ipc_shared_t)) ;
     if (shared == nullptr) {
         return BFX_QUEUE_NO_MEMORY ;
     }
 
     // The queue pool is used to store the items in the queue. It must be allocated from the shared heap because it 
     // is accessed by both sides of the IPC communication.
-    void *pool = heapAllocate(this->heapinst_, count_ * item_size_) ;
+    void *pool = this->heapinst_->alloc(count_ * item_size_) ;
     if (pool == nullptr) {
-        heapFree(this->heapinst_, shared) ;
+        this->heapinst_->free(shared) ;
         return BFX_QUEUE_NO_MEMORY ;
     }
 
@@ -54,16 +54,16 @@ cy_rslt_t MessageQueue::initFirst(uint32_t semno)
 
     rslt = mtb_ipc_init(&obj_, shared, &configobj) ;
     if (rslt != CY_RSLT_SUCCESS) {
-        heapFree(this->heapinst_, pool) ;
-        heapFree(this->heapinst_, shared) ;
+        this->heapinst_->free(pool) ;
+        this->heapinst_->free(shared) ;
         return rslt ;
     }
 
 
     rslt = mtb_ipc_queue_init(&obj_, &queue_, queue_obj_, &config) ;
     if (rslt != CY_RSLT_SUCCESS) {
-        heapFree(this->heapinst_, pool) ;
-        heapFree(this->heapinst_, shared) ;
+        this->heapinst_->free(pool) ;
+        this->heapinst_->free(shared) ;
         return rslt ;
     }
 

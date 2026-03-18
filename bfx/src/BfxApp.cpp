@@ -1,7 +1,6 @@
 #include "BfxConfig.hpp"
 #include "cy_time.h"
 #include "cybsp.h"
-#include "heap.h"
 #include "cy_retarget_io.h"
 #include <BfxApp.hpp>
 #include <BfxChild.hpp>
@@ -15,12 +14,11 @@
 // This is a shared memory pool used by the BFX framework for communications between the cores. 
 // The allocator strategy is defined by BFX_SHARED_MEMORY_ALLOCATOR_STRATEGY in BfxConfig.hpp
 // This CY_SECTION_SHAREDMEM forces this block to be placed in a shared memory section defined in the linker script.
-CY_SECTION_SHAREDMEM static uint8_t shared_memory_pool[BFX_SHARED_MEMORY_SIZE] ;
+// CY_SECTION_SHAREDMEM static uint8_t shared_memory_pool[BFX_SHARED_MEMORY_SIZE] ;
 
 namespace Bfx {
-Application::Application(uint32_t flags) : create_flags(flags), logger(nullptr), task_handle(nullptr) {
+Application::Application(uint32_t flags) : create_flags(flags), logger(nullptr), task_handle(nullptr), shared_allocator_(nullptr) {
     memset(this->children, 0, sizeof(this->children)) ;
-    shared_heap = heapInit(shared_memory_pool, sizeof(shared_memory_pool)) ;
 
 }
 

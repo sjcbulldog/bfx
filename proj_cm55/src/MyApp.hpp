@@ -12,6 +12,7 @@ public:
 
 protected:
     void createLoggerSinks() override {
+        this->addLoggerSink(new Bfx::LogSinkPrintf()) ;
     }
 
 private:

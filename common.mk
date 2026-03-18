@@ -59,5 +59,20 @@ COMBINE_SIGN_JSON?=configs/boot_with_extended_boot.json
 CONFIG_DISPLAY = W4P3INCH_DISP
 COMPONENTS+=GFXSS
 
+BFXSOURCE = \
+	../bfx/src/BfxApp.cpp\
+	../bfx/src/BfxChild.cpp\
+	../bfx/src/BfxLogger.cpp\
+	../bfx/src/BfxMessageQueue.cpp\
+	../bfx/src/BfxSinkRemoteServer.cpp\
+	../bfx/src/BfxUsbHidDev.cpp\
+	../bfx/src/BfxUSBHost.cpp\
+	../bfx/src/alloc/BfxO1HeapAllocator.cpp\
+	../bfx/src/alloc/o1heap.c\
+	../bfx/src/alloc/simple.c
+
+BFXINCLUDES = \
+	../bfx/src\
+	../bfx/src/alloc
 
 include ../common_app.mk
